@@ -1,0 +1,70 @@
+package social.selenium.page.google;
+
+import net.serenitybdd.core.annotations.findby.By;
+import net.thucydides.core.annotations.DefaultUrl;
+import net.thucydides.core.annotations.WhenPageOpens;
+import org.apache.xalan.templates.ElemElement;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import social.selenium.page.interfaces.Landing;
+
+import java.util.List;
+import java.util.ListIterator;
+
+@DefaultUrl("http://google.com")
+public class goLanding extends Landing {
+	public goLanding(WebDriver driver) {
+		super(driver);
+	}
+
+	@FindBy(css="[name=\"q\"]")
+    WebElement q;
+
+	@FindBy(css="div.clearfix.field > input[name=\"btnK\"]")
+    WebElement submit;
+
+	@WhenPageOpens
+    public void waitUntilMainElementsAppears() {
+		System.out.println("Waiting");
+        try {
+            element(q).waitUntilVisible();
+            element(submit).waitUntilVisible();
+        }catch(Exception e){
+            System.out.println("Threw an exception....");
+        }
+    }
+    public void search(String keyword){
+        q.clear();
+        element(q).typeAndEnter(keyword);
+    }
+
+    public void login(String user, String pass){
+        q.clear();
+        element(q).type(user);
+        submit.submit();
+    }
+
+
+    public void findUrl(String url){
+        System.out.println("Boom");
+        WebElement e = getDriver().findElement(By.id("resultStats"));
+
+        element(e).waitUntilVisible();
+        List<WebElement> l  = getDriver().findElements(By.cssSelector(".rc"));
+        ListIterator<WebElement> ite = l.listIterator();
+        while(ite.hasNext()){
+            WebElement m = ite.next();
+            String item = m.getText();
+            if(item.contains(url)){
+                m.findElement(By.tagName("a")).click();
+            }
+        }
+
+    }
+    public void dump(WebElement element){
+        String contents = (String)((JavascriptExecutor)this.getDriver()).executeScript("return arguments[0].innerHTML;", element);
+        System.out.println(contents);
+    }
+}
