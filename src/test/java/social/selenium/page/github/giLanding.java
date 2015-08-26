@@ -49,7 +49,6 @@ public class giLanding extends Landing {
     public void clickOnTheStar(){
         element(getDriver().findElement(By.className("unstarred"))).waitUntilVisible();
         element(getDriver().findElement(By.className("unstarred"))).submit();
-        element(getDriver().findElement(By.className("starred"))).waitUntilVisible();
     }
 
     public void login(String user, String pass){

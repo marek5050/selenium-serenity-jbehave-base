@@ -1,4 +1,4 @@
-Narrative: User logs in
+Narrative: User accesses the twitter login page ready to login!
 
 Lifecycle:
 After:
@@ -6,7 +6,7 @@ Outcome: FAILURE
 Then notify the user of invalid credentials
 
 
-Scenario: User attempts to login jdoe(jdoe)
+Scenario: The user then attempts to login with valid / invalid credentials
 Meta:
 @id scenario1
 @categories category2
