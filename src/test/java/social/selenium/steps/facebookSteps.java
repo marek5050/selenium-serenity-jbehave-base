@@ -29,13 +29,13 @@ public class facebookSteps extends ScenarioSteps {
 		landingPage.open();
 	}
 
-	@Step @When("they login as $username with $password")
-	public void login_with_user_and_pass(String username,String password){
-		landingPage.login(username, password);
+	@Step @When("they login as $user with $password")
+	public void login_with_user_and_pass(String user,String password){
+		landingPage.login(user, password);
 	}
 
 	@Step @Then("login should succeed")
 	public void clear_up_stuff(){
-			driver.manage().deleteAllCookies();
+//			driver.manage().deleteAllCookies();
 	}
 }

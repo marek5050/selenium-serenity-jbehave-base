@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/eefmp-selenium-base.iml" filepath="$PROJECT_DIR$/eefmp-selenium-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/social-testing.iml" filepath="$PROJECT_DIR$/social-testing.iml" />
     </modules>
   </component>
 </project>

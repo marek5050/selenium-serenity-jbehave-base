@@ -24,9 +24,17 @@
         <processorPath useClasspath="true" />
         <module name="eefmp-selenium-base" />
       </profile>
+      <profile default="false" name="Annotation profile for social-testing" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="social-testing" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="eefmp-selenium-base" target="1.8" />
+      <module name="social-testing" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
