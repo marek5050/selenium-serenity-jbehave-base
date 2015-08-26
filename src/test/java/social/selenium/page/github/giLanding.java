@@ -1,5 +1,6 @@
-package social.selenium.page.facebook;
+package social.selenium.page.github;
 
+import net.serenitybdd.core.annotations.findby.By;
 import social.selenium.page.interfaces.Landing;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.WhenPageOpens;
@@ -8,46 +9,87 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+import java.util.ListIterator;
+
 @DefaultUrl("http://github.com/login")
 public class giLanding extends Landing {
 	public giLanding(WebDriver driver) {
 		super(driver);
 	}
 
-	@FindBy(css=".submit.btn.primary-btn")
-	WebElement loginButton;
+	@FindBy(name="commit")
+	WebElement commit;
 
-	@FindBy(css="div.clearfix.field > input[name=\"session[username_or_email]\"]")
-    WebElement username;
+	@FindBy(id="login_field")
+    WebElement loginField;
 
-	@FindBy(css="div.clearfix.field > input[name=\"session[password]\"]")
+	@FindBy(id="password")
     WebElement password;
+
+    @FindBy(name="q")
+    WebElement q;
+
+    @FindBy(className="unstarred")
+    WebElement star;
+
 
 	@WhenPageOpens
     public void waitUntilMainElementsAppears() {
 		System.out.println("Waiting");
         try {
-            element(loginButton).waitUntilVisible();
-            element(username).waitUntilVisible();
+            element(commit).waitUntilVisible();
+            element(loginField).waitUntilVisible();
             element(password).waitUntilVisible();
         }catch(Exception e){
             System.out.println("Threw an exception....");
         }
     }
 
+    public void clickOnTheStar(){
+        element(getDriver().findElement(By.className("unstarred"))).waitUntilVisible();
+        element(getDriver().findElement(By.className("unstarred"))).submit();
+        element(getDriver().findElement(By.className("starred"))).waitUntilVisible();
+    }
+
     public void login(String user, String pass){
-        username.clear();
-        element(username).type(user);
+        loginField.clear();
+        element(loginField).type(user);
         password.clear();
         element(password).type(pass);
-        loginButton.submit();
+        commit.submit();
+    }
+
+    public void search(String keyword){
+        try{
+            element(q).waitUntilVisible();
+            element(q).typeAndEnter(keyword);
+        }catch(Exception e){
+            System.out.println("It failed but so what.."+e.getMessage());
+        }finally{
+            System.out.println("Finally done");
+        }
+    }
+
+    public void findUrl(String keyword){
+        try{
+            List<WebElement> l  = getDriver().findElements(By.cssSelector(".repo-list-name"));
+            ListIterator<WebElement> ite = l.listIterator();
+            while(ite.hasNext()){
+                WebElement m = ite.next();
+                String item = m.getText();
+                if(item.contains(keyword)){
+                    m.findElement(By.tagName("a")).click();
+                }
+            }
+        }catch(Exception e){
+            System.out.println("It failed but so what.."+e.getMessage());
+        }finally{
+        }
     }
 
     public void dump(WebElement element){
         String contents = (String)((JavascriptExecutor)this.getDriver()).executeScript("return arguments[0].innerHTML;", element);
         System.out.println(contents);
     }
-
-	public WebElement getLoginButton() { System.out.println("Called get LoginButton ");  return loginButton; }
-	
 }

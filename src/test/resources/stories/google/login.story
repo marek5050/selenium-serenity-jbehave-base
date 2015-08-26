@@ -1,6 +1,6 @@
-Narrative: User logs in
+Narrative: User goes on to google to search for crossfit!
 
-Scenario: User attempts to login jdoe(jdoe)
+Scenario: The user opens up the main page and searches for crossfit.social
 Meta:
 @id scenario1
 @categories category2

@@ -12,8 +12,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <twitter-username>TestUser</twitter-username>
         <twitter-password>TestPassword</twitter-password>
-        <github-username>TestUser1</github-username>
-        <github-password>TestPassword2</github-password>
+        <github-username>TestUser</github-username>
+        <github-password>TestUser</github-password>
     </properties>
 
     <dependencies>
@@ -108,7 +108,9 @@
 								<systemPropertyVariables>
 									<twitter-username>${twitter-username}</twitter-username>
 									<twitter-password>${twitter-password}</twitter-password>
-								</systemPropertyVariables>
+                                    <github-username>${github-username}</github-username>
+                                    <github-password>${github-password}</github-password>
+                                </systemPropertyVariables>
 							</configuration>
 		                </plugin>
 		                <plugin>

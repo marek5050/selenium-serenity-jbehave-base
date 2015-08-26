@@ -48,17 +48,24 @@ public class goLanding extends Landing {
 
 
     public void findUrl(String url){
-        System.out.println("Boom");
-        WebElement e = getDriver().findElement(By.id("resultStats"));
+        try{
+            WebElement w= getDriver().findElement(By.tagName("cite"));
+            element(w).waitUntilVisible();
 
-        element(e).waitUntilVisible();
-        List<WebElement> l  = getDriver().findElements(By.cssSelector(".rc"));
-        ListIterator<WebElement> ite = l.listIterator();
-        while(ite.hasNext()){
-            WebElement m = ite.next();
-            String item = m.getText();
-            if(item.contains(url)){
-                m.findElement(By.tagName("a")).click();
+            WebElement e = getDriver().findElement(By.id("resultStats"));
+            element(e).waitUntilVisible();
+
+        }catch(Exception e){
+            System.out.println("It failed but so what.."+e.getMessage());
+        }finally{
+            List<WebElement> l  = getDriver().findElements(By.cssSelector(".rc"));
+            ListIterator<WebElement> ite = l.listIterator();
+            while(ite.hasNext()){
+                WebElement m = ite.next();
+                String item = m.getText();
+                if(item.contains(url)){
+                    m.findElement(By.tagName("a")).click();
+                }
             }
         }
 
