@@ -1,12 +1,6 @@
-env:
-  global:
-    secure: bgP8Em4grBhRjnkqigp0T60GId91nj3yxo12Oui3FIvwX8iHyXLfKS+Fa7LnIdOIq59OWf2Uy0tqeZWF8FY7764Z0OntSAE2nCFEG1a6BmolzTxN38RFp0a4u21mP63TEhDbtPQCx2h65sorTVp0MyAD6/4bFqQxJqiEbSNNow0nmNMhF3/aGHZEiegiw7AmmfJnXMYY9rNE7UV7mEF4k/QLGzevC2Lxj3gaE7ajtd1h5JSv1rDZhl09018kAGbLID9sEU24XYhfjTiZQnuGwVl/fE3yb03666dSSAjLMVl1T3P1fusofwLgJVr8mEGQBKSc5BMRPRvOtqcDz5nrFwnlXFV/iSvAyt/9quTQhnQ+khtgw/gRx0WRiakpV5H9xS0IsC7b2gG282A/nZT0qjv8iaX3698l8EpcN5R0DhSw6dXv6FzJlYGWFL6oWh0BGCwUV9nU5cC7zaxfvw3VC/QuDKpp55Bt8PxEnvXq8bNEyy9ZxJvUC54ScGU/hz9G90MB9ohnLNZydhPxQOkhXvebLxjPjqWVI5T4tS4Q7fQJOYtpWK0k/H/gF6RUpBci0Q8vKRiuvR3oQ0Fwf7HtZgTx3SztgDl+dNVL2XefWIjWvGbTosXGEedO+cbtqtJomkU48eEjKbugUIhPD0/iX7GsPz99lMaNcXKPA3devCI=
 sudo: false
 language: java
 jdk:
   - oraclejdk8
 install:
-  - mvn verify serenity:aggregate -Dsaucelabs.url=http://marek50505:$ACCESS_KEY@ondemand.saucelabs.com:80/wd/hub -Dsaucelabs.target.platform=firefox -Dsaucelabs.driver.version=42 -Dsaucelabs.access.key=$ACCESS_KEY -Dsaucelabs.user.id=marek5050
-script:
-  - ls -al
-  - env
+  - mvn verify serenity:aggregate
