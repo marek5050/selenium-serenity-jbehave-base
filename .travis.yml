@@ -6,7 +6,7 @@ language: java
 jdk:
   - oraclejdk8
 install:
-  - mvn verify serenity:aggregate -Dsaucelabs.url=http://marek50505:ACCESS_KEY@ondemand.saucelabs.com:80/wd/hub -Dsaucelabs.target.platform=firefox -Dsaucelabs.driver.version=42 -Dsaucelabs.access.key=ACCESS_KEY -Dsaucelabs.user.id=marek5050
+  - mvn verify serenity:aggregate -Dsaucelabs.url=http://marek50505:$ACCESS_KEY@ondemand.saucelabs.com:80/wd/hub -Dsaucelabs.target.platform=firefox -Dsaucelabs.driver.version=42 -Dsaucelabs.access.key=$ACCESS_KEY -Dsaucelabs.user.id=marek5050
 script:
   - ls -al
   - env
