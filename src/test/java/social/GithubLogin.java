@@ -6,5 +6,5 @@ import net.thucydides.jbehave.ThucydidesJUnitStory;
 /**
  * Created by marek5050 on 8/26/15.
  */
-public class GiLoginSingleStory extends SerenityStory {
+public class GithubLogin extends SerenityStory {
 }

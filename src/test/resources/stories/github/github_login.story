@@ -7,7 +7,7 @@ Meta:
 
 Given the user accesses the github landing page
 When when they login as user
-And search for jbehave-social-example
-Then we should see jbehave-social-example
+And search for selenium-serenity-jbehave-base
+Then we should see selenium-serenity-jbehave-base
 And we should be on the main gitrepo page
 Then click the star
