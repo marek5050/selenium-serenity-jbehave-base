@@ -10,10 +10,11 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-@DefaultUrl("http://twitter.com/#/dashboard")
+@DefaultUrl("http://facebook.com/")
 public class fbDashboard extends PageObject {
 
     public fbDashboard(WebDriver driver) {
         super(driver);
     }
+
 }

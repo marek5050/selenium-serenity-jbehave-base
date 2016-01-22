@@ -15,17 +15,12 @@ import social.selenium.page.twitter.twLanding;
 import static org.junit.Assert.assertTrue;
 
 public class twitterSteps extends ScenarioSteps {
-
-    @Managed(driver = "firefox")
-    WebDriver driver;
-    private final Pages pages;
-
-    public twitterSteps(Pages pages) {
-        this.pages = pages;
-    }
-
     twLanding landingPage;
     twDashboard dashboardPage;
+
+    public twitterSteps(Pages pages) {
+        super(pages);
+    }
 
     @Step
     @Given("the user accesses the twitter landing page")

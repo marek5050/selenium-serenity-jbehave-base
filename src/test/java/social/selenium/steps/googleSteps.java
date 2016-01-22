@@ -1,31 +1,21 @@
 package social.selenium.steps;
 
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
-import org.openqa.selenium.WebDriver;
 import social.selenium.page.google.goDashboard;
 import social.selenium.page.google.goLanding;
-import social.selenium.page.twitter.twDashboard;
-import social.selenium.page.twitter.twLanding;
 
 public class googleSteps extends ScenarioSteps {
 
-	@Managed(driver = "firefox")
-	WebDriver driver;
-	private final Pages pages;
-
-	public googleSteps(Pages pages) {
-		this.pages = pages;
-	}
-
 	goLanding landingPage;
 	goDashboard dashboardPage;
-	
+
+	public googleSteps(Pages pages) {super(pages);}
+
 	@Step @Given("the user accesses the google landing page")
 	public void open_landing_page(){
 		landingPage.open();

@@ -1,29 +1,23 @@
 package social.selenium.steps;
 
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
-import org.openqa.selenium.WebDriver;
-import social.selenium.page.twitter.twDashboard;
-import social.selenium.page.twitter.twLanding;
+import social.selenium.page.facebook.fbDashboard;
+import social.selenium.page.facebook.fbLanding;
 
 public class facebookSteps extends ScenarioSteps {
-
-	@Managed(driver = "firefox")
-	WebDriver driver;
-	private final Pages pages;
+	fbLanding landingPage;
+	fbDashboard dashboardPage;
 
 	public facebookSteps(Pages pages) {
-		this.pages = pages;
+		super(pages);
 	}
 
-	twLanding landingPage;
-	twDashboard dashboardPage;
-	
+
 	@Step @Given("the user accesses the facebook landing page")
 	public void open_landing_page(){
 		landingPage.open();

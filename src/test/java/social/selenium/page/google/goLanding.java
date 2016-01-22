@@ -1,6 +1,7 @@
 package social.selenium.page.google;
 
 import net.serenitybdd.core.annotations.findby.By;
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.WhenPageOpens;
 import org.apache.xalan.templates.ElemElement;
@@ -19,33 +20,25 @@ public class goLanding extends Landing {
 		super(driver);
 	}
 
-	@FindBy(css="[name=\"q\"]")
-    WebElement q;
+	@FindBy(css="[name='q']")
+    WebElementFacade q;
 
-	@FindBy(css="div.clearfix.field > input[name=\"btnK\"]")
-    WebElement submit;
+	@FindBy(css="div.clearfix.field > input[name='btnK']")
+    WebElementFacade submit;
 
 	@WhenPageOpens
     public void waitUntilMainElementsAppears() {
 		System.out.println("Waiting");
         try {
-            element(q).waitUntilVisible();
-            element(submit).waitUntilVisible();
+            q.waitUntilVisible();
+            submit.waitUntilVisible();
         }catch(Exception e){
             System.out.println("Threw an exception....");
         }
     }
     public void search(String keyword){
-        q.clear();
-        element(q).typeAndEnter(keyword);
+        q.typeAndEnter(keyword);
     }
-
-    public void login(String user, String pass){
-        q.clear();
-        element(q).type(user);
-        submit.submit();
-    }
-
 
     public void findUrl(String url){
         try{
