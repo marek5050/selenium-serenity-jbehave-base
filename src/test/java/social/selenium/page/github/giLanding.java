@@ -1,6 +1,7 @@
 package social.selenium.page.github;
 
 import net.serenitybdd.core.annotations.findby.By;
+import net.serenitybdd.core.pages.WebElementFacade;
 import social.selenium.page.interfaces.Landing;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.WhenPageOpens;
@@ -19,19 +20,19 @@ public class giLanding extends Landing {
 	}
 
 	@FindBy(name="commit")
-	WebElement commit;
+    WebElementFacade commit;
 
 	@FindBy(id="login_field")
-    WebElement loginField;
+    WebElementFacade loginField;
 
 	@FindBy(id="password")
-    WebElement password;
+    WebElementFacade passwordField;
 
     @FindBy(name="q")
-    WebElement q;
+    WebElementFacade q;
 
     @FindBy(className="unstarred")
-    WebElement star;
+    WebElementFacade star;
 
 
 	@WhenPageOpens
@@ -40,29 +41,27 @@ public class giLanding extends Landing {
         try {
             element(commit).waitUntilVisible();
             element(loginField).waitUntilVisible();
-            element(password).waitUntilVisible();
+            element(passwordField).waitUntilVisible();
         }catch(Exception e){
             System.out.println("Threw an exception....");
         }
     }
 
     public void clickOnTheStar(){
-        element(getDriver().findElement(By.className("unstarred"))).waitUntilVisible();
-        element(getDriver().findElement(By.className("unstarred"))).submit();
+        star.waitUntilVisible();
+        star.submit();
     }
 
     public void login(String user, String pass){
-        loginField.clear();
-        element(loginField).type(user);
-        password.clear();
-        element(password).type(pass);
-        commit.submit();
+        typeInto(loginField,user);
+        typeInto(passwordField,pass);
+        clickOn(commit);
     }
 
     public void search(String keyword){
         try{
-            element(q).waitUntilVisible();
-            element(q).typeAndEnter(keyword);
+            q.waitUntilVisible();
+            q.typeAndEnter(keyword);
         }catch(Exception e){
             System.out.println("It failed but so what.."+e.getMessage());
         }finally{
@@ -74,8 +73,9 @@ public class giLanding extends Landing {
         try{
             List<WebElement> l  = getDriver().findElements(By.cssSelector(".repo-list-name"));
             ListIterator<WebElement> ite = l.listIterator();
+            WebElement m;
             while(ite.hasNext()){
-                WebElement m = ite.next();
+                 m = ite.next();
                 String item = m.getText();
                 if(item.contains(keyword)){
                     m.findElement(By.tagName("a")).click();
@@ -83,7 +83,6 @@ public class giLanding extends Landing {
             }
         }catch(Exception e){
             System.out.println("It failed but so what.."+e.getMessage());
-        }finally{
         }
     }
 
