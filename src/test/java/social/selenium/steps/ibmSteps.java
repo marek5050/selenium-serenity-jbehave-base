@@ -18,7 +18,6 @@ public class ibmSteps extends ScenarioSteps {
 		super(pages);
 	}
 
-
 	@Step @Given("the user accesses the ibm registration page")
 	public void open_landing_page(){
 		landingPage.open();

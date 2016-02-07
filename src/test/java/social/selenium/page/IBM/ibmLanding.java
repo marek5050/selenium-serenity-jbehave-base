@@ -34,7 +34,6 @@ public class ibmLanding extends Landing {
         clickOn(loginButton);
     }
     public void valid_page (){
-            waitForTextToAppear("404");
             Assert.assertFalse(getDriver().getTitle().contains("Resource not found"));
     }
 }
