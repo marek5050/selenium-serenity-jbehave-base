@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9094ff5-fc6b-45a2-a104-23fb4047b519" name="Default" comment="I guess I can always">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/social/selenium/tests/AdobeCheckbox.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/resources/stories/github/github_login.story" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/resources/stories/google/google_login.story" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/resources/stories/twitter/twitter_login.story" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/IEDriverServer.exe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/social/GithubLogin.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/social/selenium/tests/Java_Checkbox.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/social/socialTest.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/serenity.properties" afterPath="$PROJECT_DIR$/serenity.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/social/GithubLogin.java" afterPath="$PROJECT_DIR$/src/test/java/social/GithubLogin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/social/ibmLogin.java" afterPath="$PROJECT_DIR$/src/test/java/social/ibmLogin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/social/selenium/page/IBM/ibmLanding.java" afterPath="$PROJECT_DIR$/src/test/java/social/selenium/page/IBM/ibmLanding.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/social/selenium/steps/ibmSteps.java" afterPath="$PROJECT_DIR$/src/test/java/social/selenium/steps/ibmSteps.java" />
     </list>
     <ignored path="eefmp-selenium-base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,31 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdobeCheckbox.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/social/selenium/tests/AdobeCheckbox.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="serenity.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/serenity.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GithubLogin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/social/GithubLogin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1077,7 +1050,7 @@
       <workItem from="1453422778991" duration="5180000" />
       <workItem from="1453932065991" duration="1531000" />
       <workItem from="1454516673734" duration="493000" />
-      <workItem from="1454888572601" duration="763000" />
+      <workItem from="1454888572601" duration="943000" />
     </task>
     <task id="LOCAL-00001" summary="Cleaned up and created run configurations">
       <created>1440610973892</created>
@@ -1151,7 +1124,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453427533460</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="I guess I can always">
+      <created>1454889434114</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1454889434114</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1187,7 +1166,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44425000" />
+    <option name="totallyTimeSpent" value="44605000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="2762" height="1770" extended-state="6" />
@@ -1243,10 +1222,10 @@
     <MESSAGE value="I'll just have to change the key afterwords :)" />
     <MESSAGE value="updated readme for newest changes." />
     <MESSAGE value="Removed unnecessary and replaced methods with proper." />
-    <MESSAGE value="I guess I can always" />
     <MESSAGE value="messed up the links" />
     <MESSAGE value="Hard to imagine how many different ways I can screw up a link :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hard to imagine how many different ways I can screw up a link :)" />
+    <MESSAGE value="I guess I can always" />
+    <option name="LAST_COMMIT_MESSAGE" value="I guess I can always" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1444,13 +1423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/social/socialTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/2.45.0/selenium-api-2.45.0.jar!/org/openqa/selenium/Platform.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1608,14 +1580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/social/selenium/tests/AdobeCheckbox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/serenity.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1641,14 +1605,6 @@
             <folding />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/social/GithubLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

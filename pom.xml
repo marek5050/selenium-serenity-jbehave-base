@@ -10,10 +10,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <twitter-username>Testuser</twitter-username>
-        <twitter-password>TestPassword</twitter-password>
-        <github-username>TestUser</github-username>
-        <github-password>testPassword</github-password>
+        <twitter-username>marek5050</twitter-username>
+        <twitter-password>snowGIhawk1234$$!</twitter-password>
+        <github-username>marek5050</github-username>
+        <github-password>snowGIhawk123$$</github-password>
     </properties>
 
     <dependencies>
