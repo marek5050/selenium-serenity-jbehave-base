@@ -11,5 +11,9 @@ __mvn clean test__  is all that's required to run the tests.
 __mvn clean test serenity:aggregate__ will also generate reports in the target/site/serenity/index.html file.   
 
 ## Changes
-* Integrated Saucelabs - [serenity.properties](https://github.com/marek5050/selenium-serenity-jbehave-base/blob/master/serenity.properties)
-* Integrated TravisCI - [.travis.yml](https://github.com/marek5050/selenium-serenity-jbehave-base/blob/master/.travis.yml)
++ Integrate JIRA access via - Serenity-JIRA plugin
++ Integrated Saucelabs - [serenity.properties](https://github.com/marek5050/selenium-serenity-jbehave-base/blob/master/serenity.properties)  
+    + Created a Saucelabs profile, now we can run Sauce Labs tests via mvn -Psauce verify
+    + Run Firefox by default.
++ Integrated TravisCI - [.travis.yml](https://github.com/marek5050/selenium-serenity-jbehave-base/blob/master/.travis.yml)
++ Added alternative resources 

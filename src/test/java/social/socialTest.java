@@ -22,14 +22,4 @@ import java.text.SimpleDateFormat;
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 import static org.jbehave.core.reporters.Format.*;
 
-public class socialTest extends SerenityStories {
-    @Override
-    public InjectableStepsFactory stepsFactory() {
-        return SerenityStepFactory.withStepsFromPackage("social.selenium.steps", configuration()).andClassLoader(getClassLoader());
-    }
-
-    public socialTest() {
-//        runSerenity().inASingleSession();
-    }
-
-}
+public class socialTest extends SerenityStories {}

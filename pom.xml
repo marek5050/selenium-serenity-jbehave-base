@@ -6,31 +6,60 @@
     <groupId>org.social.testing</groupId>
     <artifactId>social-testing</artifactId>
     <packaging>jar</packaging>
-    <version>1.0</version>
+    <version>1.1</version>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <twitter-username>Testuser</twitter-username>
-        <twitter-password>TestPassword</twitter-password>
-        <github-username>TestUser</github-username>
-        <github-password>testPassword</github-password>
-    </properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!--- For fun ~~-->
+        <twitter-username>??</twitter-username>
+        <twitter-password>??</twitter-password>
+        <github-username>??</github-username>
+        <github-password>??</github-password>
+		<!--        <VERSIONS>               -->
+		<serenity.core.version>1.1.26</serenity.core.version>
+		<selenium.core.version>2.51.0</selenium.core.version>
+		<serenity.maven.plugin.version>1.1.26</serenity.maven.plugin.version>
+		<serenity.jbehave.version>1.6.0</serenity.jbehave.version>
+		<serenity.jira.version>1.1.2-rc.1</serenity.jira.version>
+		<junit.version>4.12</junit.version>
+		<maven.failsafe.version>2.19</maven.failsafe.version>
+		<serenity.junit.version>1.1.26-rc.3</serenity.junit.version>
+		<maven.clean.plugin.version>3.0.0</maven.clean.plugin.version>
+	</properties>
+
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>bintray</name>
+			<url>http://jcenter.bintray.com</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>bintray-plugins</name>
+			<url>http://jcenter.bintray.com</url>
+		</pluginRepository>
+	</pluginRepositories>
+
 
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>2.45.0</version>
+            <version>${selenium.core.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jbehave</groupId>
-            <artifactId>jbehave-core</artifactId>
-            <version>3.10</version>
+            <version>${junit.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -39,19 +68,18 @@
         </dependency>
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
-			<artifactId>core</artifactId>
-			<version>1.0.47</version>
+			<artifactId>serenity-core</artifactId>
+			<version>${serenity.core.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
 			<artifactId>serenity-junit</artifactId>
-			<version>1.0.47</version>
+			<version>${serenity.junit.version}</version>
 		</dependency>
-
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-jbehave</artifactId>
-            <version>1.0.23</version>
+            <version>${serenity.jbehave.version}</version>
         </dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -59,9 +87,9 @@
 			<version>1.7.2</version>
 		</dependency>
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.2</version>
+			<groupId>net.serenity-bdd</groupId>
+			<artifactId>serenity-jira-plugin</artifactId>
+			<version>${serenity.jira.version}</version>
 		</dependency>
     </dependencies>
 		
@@ -69,14 +97,32 @@
 			<pluginManagement>
 				<plugins>
 					<plugin>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<version>${maven.failsafe.version}</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>integration-test</goal>
+									<goal>verify</goal>
+								</goals>
+								<configuration>
+									<argLine>-Xmx512m</argLine>
+									<includes>
+										<include>**/exports/*.java</include>
+									</includes>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-clean-plugin</artifactId>
-						<version>2.6.1</version>
+						<version>${maven.clean.plugin.version}</version>
 					</plugin>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-compiler-plugin</artifactId>
-						<version>3.2</version>
+					<version>3.5</version>
 						<configuration>
 							<source>1.8</source>
 							<target>1.8</target>
@@ -110,30 +156,25 @@
 								<twitter-password>${twitter-password}</twitter-password>
 								<github-username>${github-username}</github-username>
 								<github-password>${github-password}</github-password>
+								<systemProperties>
+									<webdriver.driver>${webdriver.driver}</webdriver.driver>
+									<webdriver.remote.driver>${webdriver.remote.driver}</webdriver.remote.driver>
+									<webdriver.remote.url>${webdriver.remote.url}</webdriver.remote.url>
+									<saucelabs.url>${saucelabs.url}</saucelabs.url>
+									<saucelabs.target.platform>${saucelabs.target.platform}</saucelabs.target.platform>
+									<saucelabs.driver.version>${saucelabs.driver.version}</saucelabs.driver.version>
+									<saucelabs.user.id>${saucelabs.user.id}</saucelabs.user.id>
+									<saucelabs.access.key>${saucelabs.user.key}</saucelabs.access.key>
+									<saucelabs.test.name>${saucelabs.test.name}</saucelabs.test.name>
+									<serenity.driver.capabilities>${serenity.driver.capabilities}</serenity.driver.capabilities>
+								</systemProperties>
 							</systemPropertyVariables>
 						</configuration>
 					</plugin>
 					<plugin>
 						<groupId>net.serenity-bdd.maven.plugins</groupId>
 						<artifactId>serenity-maven-plugin</artifactId>
-						<version>1.0.47</version>
-						<dependencies>
-							<dependency>
-								<groupId>net.serenity-bdd</groupId>
-								<artifactId>core</artifactId>
-								<version>1.0.47</version>
-							</dependency>
-							<dependency>
-								<groupId>net.serenity-bdd</groupId>
-								<artifactId>serenity-jbehave</artifactId>
-								<version>1.0.23</version>
-							</dependency>
-							<dependency>
-								<groupId>org.jbehave</groupId>
-								<artifactId>jbehave-core</artifactId>
-								<version>3.10</version>
-							</dependency>
-						</dependencies>
+                    <version>${serenity.maven.plugin.version}</version>
 						<executions>
 							<execution>
 								<id>serenity-reports</id>
@@ -147,5 +188,28 @@
 				</plugins>
 			</pluginManagement>
 		</build>
+	<profiles>
+		<profile>
+			<id>firefox</id>
+			<properties>
+				<webdriver.driver>firefox</webdriver.driver>
+			</properties>
+		</profile>
+		<profile>
+			<id>sauce</id>
+			<properties>
+				<webdriver.driver>remote</webdriver.driver>
+				<webdriver.remote.driver>firefox</webdriver.remote.driver>
+				<webdriver.remote.url>http://username:password@ondemand.saucelabs.com:80/wd/hub</webdriver.remote.url>
+				<saucelabs.url>http://username:password?@ondemand.saucelabs.com:80/wd/hub</saucelabs.url>
+				<saucelabs.target.platform>WIN8</saucelabs.target.platform>
+				<saucelabs.driver.version>41</saucelabs.driver.version>
+				<!--saucelabs.driver.version=10-->
+				<saucelabs.user.id>username</saucelabs.user.id>
+				<saucelabs.access.key>password</saucelabs.access.key>
+				<saucelabs.test.name>Fake Run</saucelabs.test.name>
+			</properties>
+		</profile>
+	</profiles>
 </project>
 

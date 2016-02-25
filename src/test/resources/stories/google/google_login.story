@@ -1,4 +1,7 @@
-Narrative: User goes on to google to search for crossfit!
+Narrative:
+In order to keep in touch with my crossfit friends
+As a crossfitter
+I want to find my favorite website
 
 Scenario: The user opens up the main page and searches for crossfit.social
 Meta:

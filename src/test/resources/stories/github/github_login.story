@@ -1,4 +1,10 @@
-Narrative: User goes on to github to search for jbehave!
+Meta:
+@issue THEB-2
+
+Narrative:
+In order to view my favorite Github Repo
+As a user
+I want to login, search, and star it!
 
 Scenario: The user finds a very good example called jbehave-social-media and clicks on it. They love it and star it!
 Meta:
