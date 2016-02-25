@@ -2,12 +2,20 @@ sudo: false
 language: java
 jdk:
   - oraclejdk8
-install:
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+script:
   - mvn clean verify
-
 after_script:
   - pwd
+  - cat ~/.ssh/id_rsa.pub
   - ls
   - git clone git@github.com:marek5050/marek5050.github.io.git
   - rm marek5050.gitub.io/static/serenity/*
   - cp ./target/serenity/* marek5050.github.io/static/serenity/
+  - cd marek5050.github.io/
+  - git add static/serenity/*
+  - git commit -m "updated test page"
+  - git push
