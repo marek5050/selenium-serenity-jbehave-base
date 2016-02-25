@@ -3,4 +3,11 @@ language: java
 jdk:
   - oraclejdk8
 install:
-  - mvn verify serenity:aggregate
+  - mvn clean verify
+
+after_script:
+  - pwd
+  - ls
+  - git clone git@github.com:marek5050/marek5050.github.io.git
+  - rm marek5050.gitub.io/static/serenity/*
+  - cp ./target/serenity/* marek5050.github.io/static/serenity/
