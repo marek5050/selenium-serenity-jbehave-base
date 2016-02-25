@@ -1,21 +1,19 @@
 sudo: false
 language: java
 jdk:
-  - oraclejdk8
+- oraclejdk8
+env:
+  global:
+    GH_REF: github.com/marek5050/marek5050.github.io.git
+    secure: gg0l8zvK2wcrAHqTBqjQrM04UR/THD8OGsMJ1bJp5QebcXVtmzfBaXcd2ro+q7/tY+wNhD3wakOaiNVCZf3Bam2k/32dbKkiyPABqh/DiLEl3Qf1g7EwPc2P2Ro28mbVLqYWHiax25xGaxyokHqWwrRmYy0ZXyRJjUm5oROaW2O1EJF96v8eHWl34FWEvg5kOkygcTgohwP8JmkhgpnT2X+k7TCrqoklUDpa1zH/+IjhMiGwYswW8DlbB00zr7G6bKalrKe/9U99/YvL47zijHAn3g+SWzUArGk2jnXIgKaME8daqVo3aq55BBGhU0nyVI5sMzzn1h+g8rAsm/yfn8A2xJjXg8P15/mkd25pRIz6CpSvLDfNu2MFvMBEhaGlxf8pbH6rKDcSVNyqgRiHd7vc021S78ZIvQd6KfGEuDZD/WksvyLxH8P+3tZRN+BN13b6Xw3TcDjhtWLX5+vi5dnME7gNjJ0zqdHwFC65EhOtn32XfNDpA/ktbnmCjzE/wQHWE5TaETdBEfDIbvCR9hpOb3OoAIzArcWyTmELZe1ch4J1vYweKtmQNjRnFujvJmvWGSyRPoRZuIR/+lNKxS0IwON10FEvU8RQv0XHf7jquUe1IqhBQryvbsJeFyOCaNoP/8mtGRW5RSfbH3ys7aVAZZCqosS1DCuDa8ocG8o=
+
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
 script:
-  - mvn clean verify
+- mvn clean verify
 after_script:
-  - pwd
-  - cat ~/.ssh/id_rsa.pub
-  - ls
-  - git clone git@github.com:marek5050/marek5050.github.io.git
-  - rm marek5050.gitub.io/static/serenity/*
-  - cp ./target/serenity/* marek5050.github.io/static/serenity/
-  - cd marek5050.github.io/
-  - git add static/serenity/*
-  - git commit -m "updated test page"
-  - git push
+- pwd
+- ls
+- bash ./deploy.sh
