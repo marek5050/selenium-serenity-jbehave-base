@@ -1,3 +1,4 @@
+![Status](https://travis-ci.org/marek5050/selenium-serenity-jbehave-base.svg)
 #Selenium/Serenity/JBehave base
 JBehave stories that use Serenity PageObjects and Selenium web driver.
 
