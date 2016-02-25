@@ -1,4 +1,7 @@
-Narrative: User accesses the twitter login page ready to login!
+Narrative:
+In order to effectively use this framework
+As a tester
+I want to ensure it functions
 
 Lifecycle:
 After:
