@@ -19,17 +19,17 @@ public class ibmSteps extends ScenarioSteps {
 	}
 
 
-	@Step @Given("the user accesses the ibm registration page")
+	@Step
 	public void open_landing_page(){
 		landingPage.open();
 	}
 
-	@Step @When("when they click the Log in button")
+	@Step
 	public void login_as_existing_user(){
 		landingPage.click_login();
 	}
 
-	@Step @Then("we should get to some page")
+	@Step
 	public void some_page(){
 		landingPage.valid_page();
 	}

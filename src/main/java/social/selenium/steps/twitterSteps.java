@@ -21,13 +21,11 @@ public class twitterSteps extends ScenarioSteps {
     }
 
     @Step
-    @Given("the user accesses the twitter landing page")
     public void open_landing_page() {
         landingPage.open();
     }
 
     @Step
-    @Then("notify the user of invalid credentials")
     public void notify_user_invalid(){
         System.out.println("=======================================================");
         System.out.println("====xxxxxxxxxx===============xxxxxxxxxxxxx=============");
@@ -44,33 +42,32 @@ public class twitterSteps extends ScenarioSteps {
 
 
     @Step
-    @When("they login as user")
     public void login_with_user() {
         String username = System.getProperty("twitter-username");
         String password = System.getProperty("twitter-password");
-        landingPage.login(username, password);
+        if(!username.equals(password))
+            landingPage.login(username, password);
+        else{
+            notify_user_invalid();
+        }
     }
 
     @Step
-    @When("they login as $username with $password")
     public void login_with_user_and_pass(String username, String password) {
         landingPage.login(username, password);
     }
 
     @Step
-    @Then("there will be a tweet box")
     public void send_tweet() {
         dashboardPage.findTweetBox();
     }
 
     @Step
-    @Then("write a message $message")
     public void write_a_tweet(String message) {
         dashboardPage.writeTweet(message);
     }
 
     @Step
-    @Then("send the tweet")
     public void write_a_tweet() {
         dashboardPage.sendTweet();
     }

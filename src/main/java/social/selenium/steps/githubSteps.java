@@ -19,32 +19,32 @@ public class githubSteps extends ScenarioSteps {
 	}
 
 
-	@Step @Given("the user accesses the github landing page")
+	@Step
 	public void open_landing_page(){
 		landingPage.open();
 	}
 
-	@Step @When("when they login as user")
+	@Step
 	public void login_as_user(){
 		String username = System.getProperty("github-username");
 		String password = System.getProperty("github-password");
 		landingPage.login(username, password);
 	}
 
-	@Step @Then("we should be on the main gitrepo page")
+	@Step
 	public void git_repo_page(){}
 
-	@Step @Then("click the star")
+	@Step
 	public void click_on_the_star(){
         landingPage.clickOnTheStar();
 	}
 
-	@Step @When("search for $keyword")
+	@Step
 	public void search_for_keyword(String keyword){
 		landingPage.search(keyword);
     }
 
-	@Step @Then("we should see $keyword")
+	@Step
 	public void find_in_results(String keyword){
 		landingPage.findUrl(keyword);
 	}

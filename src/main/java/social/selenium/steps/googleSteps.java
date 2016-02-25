@@ -16,23 +16,21 @@ public class googleSteps extends ScenarioSteps {
 
 	public googleSteps(Pages pages) {super(pages);}
 
-	@Step @Given("the user accesses the google landing page")
-	public void open_landing_page(){
+	@Step
+	public googleSteps open_landing_page(){
 		landingPage.open();
+		return this;
 	}
 
-	@Step @When("when they type in $keyword")
-	public void search_for_keyword(String keyword){
+	@Step
+	public googleSteps search_for_keyword(String keyword){
 		landingPage.search(keyword);
+		return this;
 	}
 
-	@Step @Then("we should see $keyword")
-	public void find_in_results(String keyword){
+	@Step
+	public googleSteps find_in_results(String keyword){
 		landingPage.findUrl(keyword);
-	}
-
-	@Step @Then("click on it")
-	public void click_on_crossfit_social(){
-//		driver.manage().deleteAllCookies();
+		return this;
 	}
 }
