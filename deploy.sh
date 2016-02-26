@@ -26,4 +26,4 @@ git commit -m "Deploy to GitHub Pages"
 # repo's gh-pages branch. (All previous history on the gh-pages branch
 # will be lost, since we are overwriting it.) We redirect any output to
 # /dev/null to hide any sensitive credential data that might otherwise be exposed.
-git push --force --quiet "https://marek5050:${GH_TOKEN}@github.com/marek5050/marek5050.github.io.git" --all > /dev/null 2>&1
+git push --force "https://marek5050:${GH_TOKEN}@github.com/marek5050/marek5050.github.io.git" --all
