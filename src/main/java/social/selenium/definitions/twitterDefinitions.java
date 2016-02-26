@@ -1,19 +1,15 @@
 package social.selenium.definitions;
 
 import net.thucydides.core.annotations.ManagedPages;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
-import net.thucydides.core.steps.ScenarioSteps;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
-import social.selenium.page.twitter.twDashboard;
-import social.selenium.page.twitter.twLanding;
-import social.selenium.steps.facebookSteps;
 import social.selenium.steps.twitterSteps;
 
-import static org.junit.Assert.assertFalse;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsNot.not;
 
 /**
  * Created by marek5050 on 2/25/16.
@@ -39,7 +35,7 @@ public class twitterDefinitions {
     public void login_with_user() {
         String username = System.getProperty("twitter-username");
         String password = System.getProperty("twitter-password");
-        assertFalse(username.equals(password));
+        assertThat(username, not(password));
         ts.login_with_user_and_pass(username,password);
     }
 
