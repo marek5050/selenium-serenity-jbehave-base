@@ -8,7 +8,7 @@ mkdir out;
 git config --global user.email "marek.bejda@gmail.com"
 git config --global user.name "Marek Bejda"
 
-git clone https://marek5050:${GH_TOKEN}@github.com/marek5050/marek5050.github.io.git
+git clone https://github.com/marek5050/marek5050.github.io.git
 
 # run our compile script, discussed above
 rm -r marek5050.github.io/static/serenity/*
