@@ -5,6 +5,9 @@ set -e # exit with nonzero exit code if anything fails
 rm -rf out || exit 0;
 mkdir out;
 
+git config --global user.email "marek.bejda@gmail.com"
+git config --global user.name "Marek Bejda"
+
 git clone https://marek5050:${GH_TOKEN}@github.com/marek5050/marek5050.github.io.git
 
 # run our compile script, discussed above
