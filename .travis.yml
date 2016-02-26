@@ -1,19 +1,17 @@
 sudo: false
 language: java
 jdk:
-- oraclejdk8
+  - oraclejdk8
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3
+script:
+  - mvn verify
+after_script:
+  - pwd
+  - ls
+  - bash ./deploy.sh
 env:
   global:
-    GH_REF: github.com/marek5050/marek5050.github.io.git
-    secure: gg0l8zvK2wcrAHqTBqjQrM04UR/THD8OGsMJ1bJp5QebcXVtmzfBaXcd2ro+q7/tY+wNhD3wakOaiNVCZf3Bam2k/32dbKkiyPABqh/DiLEl3Qf1g7EwPc2P2Ro28mbVLqYWHiax25xGaxyokHqWwrRmYy0ZXyRJjUm5oROaW2O1EJF96v8eHWl34FWEvg5kOkygcTgohwP8JmkhgpnT2X+k7TCrqoklUDpa1zH/+IjhMiGwYswW8DlbB00zr7G6bKalrKe/9U99/YvL47zijHAn3g+SWzUArGk2jnXIgKaME8daqVo3aq55BBGhU0nyVI5sMzzn1h+g8rAsm/yfn8A2xJjXg8P15/mkd25pRIz6CpSvLDfNu2MFvMBEhaGlxf8pbH6rKDcSVNyqgRiHd7vc021S78ZIvQd6KfGEuDZD/WksvyLxH8P+3tZRN+BN13b6Xw3TcDjhtWLX5+vi5dnME7gNjJ0zqdHwFC65EhOtn32XfNDpA/ktbnmCjzE/wQHWE5TaETdBEfDIbvCR9hpOb3OoAIzArcWyTmELZe1ch4J1vYweKtmQNjRnFujvJmvWGSyRPoRZuIR/+lNKxS0IwON10FEvU8RQv0XHf7jquUe1IqhBQryvbsJeFyOCaNoP/8mtGRW5RSfbH3ys7aVAZZCqosS1DCuDa8ocG8o=
-
-before_script:
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
-- sleep 3
-script:
-- mvn verify
-after_script:
-- pwd
-- ls
-- bash ./deploy.sh
+   - secure: "v6L/aOJUfq+jhvr/5kecYBJPPYC167zQa5HJCdg10kZgiaqD6QkVdPv6X9oT+yuIdF/3eT1mNaTZLiZNXKCcGOeS7bQl4v3EBeHHXWF9sT+LzW8tmqFJO02g3houR5FENH0S/Xqo8b6aRjUcb//xzbHSDAJTZ3oAqAI6YNN1SPnsbEq9rMKwtFy35cKyT0OcHXtrFk6zrKcrfW9w3Ysc0yWxErCWkPE2/IEK8dKQgxXEbhGyakc9onD+xoU4efmuAO4UXbD3OgnaFLBxvc3KNk8zTxsPZEzUxIitB+E44RHkccdbqIol1m1P7/QJy7BIBYA1jdG6m2xCZFXvpAW0a26dc2R/D0XkVztRc7BGUJgpKFaZ9fNEqT37g8UgFSVEsUmBbgDPEY5L7z3hrEH7DZx3ThOkflEEYKtSJc2MIvoqRxby+OVA+gs4u8l15TtFvPnJwA/R76uqJEdn1aq7TGaUkDjTdSI7Ofcloiv0DAJe6pqRB2hw2G6gzgGySozK2uYe3TRdIdHkDwERDb/D3Hgi7Gf5WBsDIy0EXfhXKYEe/yiD/BzJFsAeHuaqy2aMJK5lcgmzfjIHrnb0e9z7mqVl5ig81GASWhEpwtXP1U7qvtOtHfSi4imNAnTNyMLXecVH1SRt/Cf0mPQ/1BdZsoRVvkn6aKPPfcjYQq2fiFs="
