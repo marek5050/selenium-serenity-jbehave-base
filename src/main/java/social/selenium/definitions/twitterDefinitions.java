@@ -1,6 +1,5 @@
 package social.selenium.definitions;
 
-import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
 import org.jbehave.core.annotations.Given;
@@ -15,9 +14,6 @@ import static org.hamcrest.core.IsNot.not;
  * Created by marek5050 on 2/25/16.
  */
 public class twitterDefinitions {
-    @ManagedPages
-    Pages pages;
-
     @Steps
     twitterSteps ts;
 

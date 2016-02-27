@@ -1,5 +1,7 @@
 package social.selenium.page.twitter;
 
+import net.serenitybdd.core.annotations.findby.FindBy;
+import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.WhenPageOpens;
@@ -7,11 +9,9 @@ import net.thucydides.core.annotations.WhenPageOpens;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import social.selenium.page.interfaces.Landing;
 
 @DefaultUrl("http://twitter.com/login")
-public class twLanding extends Landing {
+public class twLanding extends PageObject {
 	public twLanding(WebDriver driver) {
 		super(driver);
 	}
@@ -37,12 +37,12 @@ public class twLanding extends Landing {
     }
 
     public void login(String user, String pass){
-        typeInto(username,user);
+        username.type(user);
         password.typeAndEnter(pass);
     }
 
     public void dump(WebElement element){
-        String contents = (String)((JavascriptExecutor)this.getDriver()).executeScript("return arguments[0].innerHTML;", element);
+        String contents = (String)((JavascriptExecutor) getDriver()).executeScript("return arguments[0].innerHTML;", element);
         System.out.println(contents);
     }
 }

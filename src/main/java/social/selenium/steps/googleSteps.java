@@ -24,13 +24,13 @@ public class googleSteps extends ScenarioSteps {
 
 	@Step
 	public googleSteps search_for_keyword(String keyword){
-		landingPage.search(keyword);
+		landingPage.search(keyword.toLowerCase());
 		return this;
 	}
 
 	@Step
 	public googleSteps find_in_results(String keyword){
-		landingPage.findUrl(keyword);
+		landingPage.findUrl(keyword.toLowerCase());
 		return this;
 	}
 }

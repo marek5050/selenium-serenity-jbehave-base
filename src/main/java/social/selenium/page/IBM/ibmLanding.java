@@ -1,15 +1,17 @@
 package social.selenium.page.IBM;
 
+import net.serenitybdd.core.annotations.findby.FindBy;
+import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.WhenPageOpens;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.FindBy;
-import social.selenium.page.interfaces.Landing;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 @DefaultUrl("https://console.ng.bluemix.net/registration/")
-public class ibmLanding extends Landing {
+public class ibmLanding extends PageObject {
 	public ibmLanding(WebDriver driver) {
 		super(driver);
 	}
@@ -31,6 +33,6 @@ public class ibmLanding extends Landing {
         clickOn(loginButton);
     }
     public void valid_page (){
-            Assert.assertFalse(getDriver().getTitle().contains("Resource not found"));
+            assertThat(getDriver().getTitle(), not("Resource not found"));
     }
 }

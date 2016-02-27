@@ -1,7 +1,6 @@
 package social.selenium.definitions;
 
 import net.thucydides.core.annotations.ManagedPages;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
 import org.jbehave.core.annotations.Given;

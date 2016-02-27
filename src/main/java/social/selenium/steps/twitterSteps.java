@@ -10,6 +10,8 @@ import net.thucydides.core.annotations.Step;
 import social.selenium.page.twitter.twDashboard;
 import social.selenium.page.twitter.twLanding;
 
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 public class twitterSteps extends ScenarioSteps {
@@ -49,6 +51,7 @@ public class twitterSteps extends ScenarioSteps {
             landingPage.login(username, password);
         else{
             notify_user_invalid();
+            assertThat(username,not(password));
         }
     }
 

@@ -1,20 +1,20 @@
 package social.selenium.page.github;
 
 import net.serenitybdd.core.annotations.findby.By;
+import net.serenitybdd.core.annotations.findby.FindBy;
+import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
-import social.selenium.page.interfaces.Landing;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.WhenPageOpens;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 import java.util.ListIterator;
 
 @DefaultUrl("http://github.com/login")
-public class giLanding extends Landing {
+public class giLanding extends PageObject {
 	public giLanding(WebDriver driver) {
 		super(driver);
 	}
@@ -34,6 +34,8 @@ public class giLanding extends Landing {
     @FindBy(className="unstarred")
     WebElementFacade star;
 
+    @FindBy(css=".repo-list-name")
+    List<WebElementFacade> repos;
 
 	@WhenPageOpens
     public void waitUntilMainElementsAppears() {
@@ -73,20 +75,16 @@ public class giLanding extends Landing {
     }
 
     public void findUrl(String keyword){
-        try{
-            List<WebElement> l  = getDriver().findElements(By.cssSelector(".repo-list-name"));
-            ListIterator<WebElement> ite = l.listIterator();
-            WebElement m;
+            ListIterator<WebElementFacade> ite = repos.listIterator();
+            WebElementFacade m;
             while(ite.hasNext()){
                  m = ite.next();
                 String item = m.getText();
                 if(item.contains(keyword)){
                     m.findElement(By.tagName("a")).click();
+                    return;
                 }
             }
-        }catch(Exception e){
-            System.out.println("It failed but so what.."+e.getMessage());
-        }
     }
 
     public void dump(WebElement element){

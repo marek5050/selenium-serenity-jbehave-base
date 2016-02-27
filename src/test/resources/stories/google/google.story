@@ -3,7 +3,7 @@ In order to keep in touch with my crossfit friends
 As a crossfitter
 I want to find my favorite website
 
-Scenario: The user opens up the main page and searches for crossfit.social
+Scenario: User searches for Crossfit on Google
 Meta:
 @id scenario1
 @categories category2

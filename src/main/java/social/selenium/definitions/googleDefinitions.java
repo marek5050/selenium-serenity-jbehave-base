@@ -1,23 +1,16 @@
 package social.selenium.definitions;
 
-import net.thucydides.core.annotations.ManagedPages;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.annotations.Steps;
-import net.thucydides.core.pages.Pages;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
-import social.selenium.steps.facebookSteps;
 import social.selenium.steps.googleSteps;
 
 /**
  * Created by marek5050 on 2/25/16.
  */
 public class googleDefinitions {
-    @ManagedPages
-    Pages pages;
-
     @Steps
     googleSteps gs;
 
