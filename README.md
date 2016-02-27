@@ -2,9 +2,9 @@
 #Selenium/Serenity/JBehave base
 A framework skeleton for testing using Selenium/Serenity/JBehave.
 
-[Selenium](http://www.seleniumhq.org/docs/index.jsp)
-[Serenity](http://thucydides.info/docs/serenity-staging/)
-[JBehave](http://jbehave.org/)
+[Selenium](http://www.seleniumhq.org/docs/index.jsp)  
+[Serenity](http://thucydides.info/docs/serenity-staging/)  
+[JBehave](http://jbehave.org/)  
 
 ## Serenity Report
 [The report can be found on our Github Pages](http://marek5050.github.io/static/serenity/index.html)
@@ -26,4 +26,4 @@ __mvn -Psauce verify__ will run tests on Sauce Labs.
     + Created a Saucelabs profile, now we can run Sauce Labs tests via mvn -Psauce verify
     + Run Firefox by default.
 + Integrated TravisCI - [.travis.yml](https://github.com/marek5050/selenium-serenity-jbehave-base/blob/master/.travis.yml)
-+ Added alternative resources 
++ Added alternative resources
