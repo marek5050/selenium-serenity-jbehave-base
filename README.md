@@ -1,4 +1,4 @@
-![Status](https://travis-ci.org/marek5050/selenium-serenity-jbehave-base.svg)
+[![Status](https://travis-ci.org/marek5050/selenium-serenity-jbehave-base.svg?branch=master)](https://travis-ci.org/marek5050/selenium-serenity-jbehave-base)
 #Selenium/Serenity/JBehave base
 A framework skeleton for testing using Selenium/Serenity/JBehave.
 
