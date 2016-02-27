@@ -1,13 +1,10 @@
 package social.selenium.definitions;
 
-import net.thucydides.core.annotations.ManagedPages;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.Pages;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
-import social.selenium.steps.facebookSteps;
 import social.selenium.steps.githubSteps;
 
 import static org.junit.Assert.assertFalse;
@@ -16,8 +13,6 @@ import static org.junit.Assert.assertFalse;
  * Created by marek5050 on 2/25/16.
  */
 public class githubDefinitions {
-    @ManagedPages
-    Pages pages;
 
     @Steps
     githubSteps gs;
@@ -34,9 +29,6 @@ public class githubDefinitions {
         assertFalse(username.equals(password));
         gs.login_as_user();
     }
-
-    @Then("we should be on the main gitrepo page")
-    public void git_repo_page(){}
 
     @Then("click the star")
     public void click_on_the_star(){

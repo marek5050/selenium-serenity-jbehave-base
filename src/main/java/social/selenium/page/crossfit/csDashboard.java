@@ -1,13 +1,13 @@
-package social.selenium.page.google;
+package social.selenium.page.crossfit;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.WebDriver;
 
-@DefaultUrl("http://google.com")
-public class goDashboard extends PageObject {
+@DefaultUrl("http://crossfit.social/")
+public class csDashboard extends PageObject {
 
-    public goDashboard(WebDriver driver) {
+    public csDashboard(WebDriver driver) {
         super(driver);
     }
 }
