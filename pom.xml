@@ -148,7 +148,6 @@
 					<version>2.18.1</version>
 					<configuration>
 						<forkMode>never</forkMode>
-						<skipTests>false</skipTests>
 						<testFailureIgnore>true</testFailureIgnore>
 						<systemPropertyVariables>
 							<twitter-username>${twitter-username}</twitter-username>
